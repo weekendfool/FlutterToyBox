@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             //　textの設定
             child: Text('冷やし中華始めました'),
               //　場所の指定
-            alignment: Alignment.center,
+            transform: Matrix4.rotationZ(0.1),
           ),
         ),
       ),
