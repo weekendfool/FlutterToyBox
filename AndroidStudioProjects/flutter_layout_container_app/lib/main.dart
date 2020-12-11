@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             //　textの設定
             child: Text('冷やし中華始めました'),
               //　場所の指定
-            margin: const EdgeInsets.all(50.0),
+            alignment: Alignment.center,
           ),
         ),
       ),
