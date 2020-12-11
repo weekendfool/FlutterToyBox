@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
             width: 300.0,
             height: 300.0,
             //　textの設定
-            child: Text('冷やし中華始めました')
+            child: Text('冷やし中華始めました'),
+              //　場所の指定
+            padding: const EdgeInsets.all(50.0),
           ),
         ),
       ),
