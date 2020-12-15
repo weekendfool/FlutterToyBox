@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp3());
+  runApp(MyApp4());
 }
 
 class MyApp extends StatelessWidget {
@@ -67,6 +67,29 @@ class MyApp3 extends StatelessWidget {
               ],
             ),
           ),
+      ),
+    );
+  }
+}
+
+class MyApp4 extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'MainAxisSize',
+      home: Center(
+        child: Container(
+          color: Colors.white,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget> [
+              Container(color: Colors.blue, width: 50 ,height: 50),
+              Container(color: Colors.red, width: 50, height: 50),
+              Container(color: Colors.green, width: 50, height: 50),
+              Container(color: Colors.orange, width: 50, height: 50),
+            ],
+          ),
+        ),
       ),
     );
   }
