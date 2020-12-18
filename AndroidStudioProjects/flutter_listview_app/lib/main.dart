@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp3());
+  runApp(MyApp4());
 }
 
 class MyApp extends StatelessWidget {
@@ -117,6 +117,51 @@ class MyApp3 extends StatelessWidget {
         onLongPress: () {
           print("onLongPress called.");
         },
+      ),
+    );
+  }
+}
+
+class MyApp4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var list = ["メッセージ0", "メッセージ1", "メッセージ2", "メッセージ3", "メッセージ4", "メッセージ5", "メッセージ6"];
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('ListView'),
+        ),
+        body: ListView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            if (index >= list.length) {
+              list.addAll(["メッセージ0", "メッセージ1", "メッセージ2", "メッセージ3", "メッセージ4", "メッセージ5", "メッセージ6"]);
+            }
+            return _messageItem(list[index]);
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _messageItem(String title) {
+    return Container(
+      decoration: new BoxDecoration(
+        border: new Border(bottom: BorderSide(width: 1.0, color: Colors.grey))
+      ),
+      child: ListTile(
+        title: Text(
+          title,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18.0
+          ),
+        ),
+        onTap: () {
+          print('onTap called');
+        },
+        onLongPress: () {
+          print('onLongPress called');
+        }
       ),
     );
   }
