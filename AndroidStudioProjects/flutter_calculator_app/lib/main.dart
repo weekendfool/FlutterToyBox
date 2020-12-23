@@ -12,7 +12,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   // 大元となるウィジェットのビルド
+  //　ビルドメソッド
   Widget build(BuildContext context) {
+    //　ウィジェットツリーを返す
     return MaterialApp(
       // 大枠ウィジェットのタイトル
       title: 'Flutter Demo',
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
 }
 
 // StateFulWidgetを継承して作成
+//　基本的なものは全てcreateStateで指定した関数に実装する
 class MyHomePage extends StatefulWidget {
   // コンストラクター
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -34,10 +37,13 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
+  //　関数
+  //　返り値は_MyHomePageState
   State<StatefulWidget> createState() => _MyHomePageState();
 }
 
 // stateを継承したクラス
+//　状態を保持する、更新する機能を持つ
 class _MyHomePageState extends State<MyHomePage> {
 
   //　状態の保持と更新を記録する変数の宣言
@@ -45,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // 関数の宣言、戻り値なし
   void _incounterCounter() {
+    //　setStateで囲むことでUIに変更を伝達するルール
     setState(() {
       // _counterに一加算する
       _counter++;
