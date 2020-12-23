@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MHT Librarian',
       theme: ThemeData(
-        primaryColor: Colors.black54,
+        primaryColor: Colors.black,
       ),
       home: MHTLibrarian(),
     );
@@ -44,6 +44,7 @@ class _MHTLibrarianState extends State<MHTLibrarian> {
           title: Text(
             'MHTLibrarian',
           ),
+        ),
           body: ListView(
             children: [
               _menuItem('$bookNameList[0]',Icon(Icons.settings)),
@@ -51,6 +52,31 @@ class _MHTLibrarianState extends State<MHTLibrarian> {
               _menuItem('$bookNameList[2]',Icon(Icons.settings)),
             ],
           ),
+        ),
+    );
+  }
+
+  Widget _menuItem(String title, Icon icon) {
+    return GestureDetector(
+      child: Container(
+        padding: EdgeInsets.all(8.0),
+        decoration: new BoxDecoration(
+          border: new Border(bottom: BorderSide(width: 1.0, color: Colors.black))
+        ),
+        child: Row(
+          children: <Widget> [
+            Container(
+              margin: EdgeInsets.all(10.0),
+              child: icon,
+            ),
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18.0
+                ),
+              ),
+          ],
         ),
       ),
     );
